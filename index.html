@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suraj Prajapati | MERN Full Stack Developer & AI Engineer - The Sigma Developers</title>
+  <meta name="description" content="Suraj Prajapati - MERN Full Stack Developer, React.js Specialist, and AI Integration Engineer from India. Building modern, scalable web applications. The Sigma Developers portfolio.">
+  <meta name="keywords" content="Suraj Prajapati, The Sigma Developers, MERN full stack developer India, React developer portfolio, AI developer portfolio, React.js Specialist, web developer Lucknow">
+  <meta name="author" content="Suraj Prajapati">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thesigmadevelopers.web.app/">
+
+  <meta property="og:title" content="Suraj Prajapati | MERN Stack Developer - The Sigma Developers">
+  <meta property="og:description" content="MERN Full Stack Developer, React.js Specialist, and AI Integration Engineer building modern web applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thesigmadevelopers.web.app/">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/glass.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/dev-os.css">
+  <link rel="stylesheet" href="css/phase2.css">
+  <link rel="stylesheet" href="css/responsive.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%CE%A3</text></svg>">
+</head>
+<body>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-logo">
+      <svg class="sigma-logo-loader" viewBox="0 0 60 60" width="60" height="60">
+        <polygon points="10,10 50,10 30,30 50,50 10,50 10,45 40,45 25,30 40,15 10,15" fill="url(#loaderGrad)" />
+        <defs>
+          <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#a855f7"/>
+            <stop offset="100%" stop-color="#ec4899"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+  </div>
+
+  <header id="navbar" class="navbar glass-nav" role="banner">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="#hero" class="nav-logo" aria-label="The Sigma Developers - Home">
+        <svg class="sigma-logo" viewBox="0 0 60 60" width="32" height="32" aria-hidden="true">
+          <polygon points="10,10 50,10 30,30 50,50 10,50 10,45 40,45 25,30 40,15 10,15" fill="url(#navGrad)" />
+          <defs>
+            <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#a855f7"/>
+              <stop offset="100%" stop-color="#ec4899"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="nav-brand">Sigma<span class="accent">Dev</span></span>
+      </a>
+      <div class="nav-links">
+        <a href="#about" class="nav-link" aria-label="About">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/></svg>
+          <span>About</span>
+        </a>
+        <a href="#skills" class="nav-link" aria-label="Skills">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <span>Skills</span>
+        </a>
+        <a href="#projects" class="nav-link" aria-label="Projects">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <span>Projects</span>
+        </a>
+        <a href="#experience" class="nav-link" aria-label="Experience">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3h-8v4h8V3z"/></svg>
+          <span>Experience</span>
+        </a>
+        <a href="#contact" class="nav-link" aria-label="Contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          <span>Contact</span>
+        </a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section id="hero" class="hero section" aria-label="Hero introduction">
+      <div class="hero-bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge animate-on-scroll">
+            <span class="badge-dot"></span>
+            Available for opportunities
+          </div>
+          <h1 class="hero-title animate-on-scroll">
+            <span class="line">Hi, I'm <span class="gradient-text">Suraj Prajapati</span></span>
+            <span class="line">MERN Stack Developer</span>
+            <span class="line typing-line">&amp; AI Integration Engineer</span>
+          </h1>
+          <p class="hero-tagline animate-on-scroll">Building modern, scalable web applications with React, Node.js, and Cloud technologies.</p>
+          <div class="hero-cta animate-on-scroll">
+            <a href="#projects" class="btn btn-primary btn-ripple">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              View Projects
+            </a>
+            <a href="#contact" class="btn btn-secondary btn-ripple">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Contact Me
+            </a>
+          </div>
+        </div>
+        <div class="hero-image-wrap animate-on-scroll">
+          <div class="hero-image-card glass-card" id="heroCard">
+            <div class="hero-image-glow" aria-hidden="true"></div>
+            <img src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/e081f948-4881-461c-b082-9b0ae0e9c382/PROFILE-IMAGE-1770387143105.jpeg?width=800&height=800&resize=contain" alt="Suraj Prajapati - MERN Full Stack Developer" class="hero-photo" loading="eager" width="320" height="380">
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="about section" aria-label="About me">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">
+          <span class="gradient-text">About Me</span>
+        </h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p class="about-line animate-on-scroll">I'm a passionate <strong>MERN Full Stack Developer</strong> from Lucknow, India.</p>
+            <p class="about-line animate-on-scroll">I specialize in building <strong>responsive websites</strong> and modern web applications using React.js, Node.js, and the latest technologies.</p>
+            <p class="about-line animate-on-scroll">Currently completing my diploma at <strong>Government Polytechnic, Lucknow</strong> with a focus on IT &amp; AI/ML.</p>
+            <p class="about-line animate-on-scroll">I've built projects ranging from <strong>AI Image Generators</strong> to full-stack web platforms with Firebase integration.</p>
+            <p class="about-line animate-on-scroll">Always eager to work on <strong>innovative ideas</strong> and bring real-world applications to life.</p>
+          </div>
+          <div class="about-stats animate-on-scroll">
+            <div class="stat-card glass-card">
+              <span class="stat-number gradient-text">5+</span>
+              <span class="stat-label">Projects Built</span>
+            </div>
+            <div class="stat-card glass-card">
+              <span class="stat-number gradient-text">6+</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+            <div class="stat-card glass-card">
+              <span class="stat-number gradient-text">3+</span>
+              <span class="stat-label">Tech Stacks</span>
+            </div>
+            <div class="stat-card glass-card">
+              <span class="stat-number gradient-text">1+</span>
+              <span class="stat-label">Years Coding</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DEVELOPER OPERATING SYSTEM ========== -->
+    <section id="skills" class="dev-os section" aria-label="Developer capabilities and tech stack">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">
+          <span class="gradient-text">Developer Operating System</span>
+        </h2>
+        <p class="section-subtitle animate-on-scroll">End-to-end capabilities for building production-ready systems</p>
+
+        <div class="os-grid">
+          <!-- Frontend System -->
+          <article class="os-module glass-card animate-on-scroll" data-system="frontend">
+            <div class="os-module-header">
+              <div class="os-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <div class="os-title">
+                <h3>Frontend System</h3>
+                <span class="os-subtitle">User Interface Layer</span>
+              </div>
+            </div>
+            <div class="os-capabilities">
+              <div class="os-cap-item">
+                <span class="os-cap-label">Component Architecture</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">React.js</span>
+                  <span class="os-tech">JavaScript ES6+</span>
+                </div>
+              </div>
+              <div class="os-cap-item">
+                <span class="os-cap-label">Styling Systems</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">Tailwind CSS</span>
+                  <span class="os-tech">Bootstrap 5</span>
+                  <span class="os-tech">CSS3</span>
+                </div>
+              </div>
+              <div class="os-cap-item">
+                <span class="os-cap-label">Markup</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">HTML5</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Backend & APIs -->
+          <article class="os-module glass-card animate-on-scroll" data-system="backend">
+            <div class="os-module-header">
+              <div class="os-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>
+              </div>
+              <div class="os-title">
+                <h3>Backend &amp; APIs</h3>
+                <span class="os-subtitle">Server &amp; Data Layer</span>
+              </div>
+            </div>
+            <div class="os-capabilities">
+              <div class="os-cap-item">
+                <span class="os-cap-label">Runtime &amp; Frameworks</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">Node.js</span>
+                  <span class="os-tech">Express</span>
+                  <span class="os-tech">ASP.NET Core</span>
+                </div>
+              </div>
+              <div class="os-cap-item">
+                <span class="os-cap-label">Databases</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">MongoDB</span>
+                  <span class="os-tech">SQL Server</span>
+                </div>
+              </div>
+              <div class="os-cap-item">
+                <span class="os-cap-label">API Design</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">REST APIs</span>
+                  <span class="os-tech">C#</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Cloud / AI / Data -->
+          <article class="os-module glass-card animate-on-scroll" data-system="cloud">
+            <div class="os-module-header">
+              <div class="os-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+              </div>
+              <div class="os-title">
+                <h3>Cloud / AI / Data</h3>
+                <span class="os-subtitle">Infrastructure &amp; Intelligence</span>
+              </div>
+            </div>
+            <div class="os-capabilities">
+              <div class="os-cap-item">
+                <span class="os-cap-label">Cloud Platforms</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">Google Cloud</span>
+                  <span class="os-tech">AWS</span>
+                  <span class="os-tech">Firebase</span>
+                  <span class="os-tech">Supabase</span>
+                </div>
+              </div>
+              <div class="os-cap-item">
+                <span class="os-cap-label">AI &amp; ML</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">Vertex AI</span>
+                  <span class="os-tech">GenAI</span>
+                  <span class="os-tech">Amazon Q</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tools, Payments & Deployment -->
+          <article class="os-module glass-card animate-on-scroll" data-system="tools">
+            <div class="os-module-header">
+              <div class="os-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              </div>
+              <div class="os-title">
+                <h3>Tools &amp; Operations</h3>
+                <span class="os-subtitle">DevOps &amp; Integration</span>
+              </div>
+            </div>
+            <div class="os-capabilities">
+              <div class="os-cap-item">
+                <span class="os-cap-label">Version Control &amp; CI/CD</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">Git</span>
+                  <span class="os-tech">GitHub</span>
+                  <span class="os-tech">Docker</span>
+                </div>
+              </div>
+              <div class="os-cap-item">
+                <span class="os-cap-label">API Testing</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">Postman</span>
+                  <span class="os-tech">Hoppscotch</span>
+                </div>
+              </div>
+              <div class="os-cap-item">
+                <span class="os-cap-label">Deployment &amp; Payments</span>
+                <div class="os-tech-tags">
+                  <span class="os-tech">Netlify</span>
+                  <span class="os-tech">Hostinger</span>
+                  <span class="os-tech">Stripe</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MODULE 4: PROJECTS — CASE STUDY LAB ========== -->
+    <section id="projects" class="projects section" aria-label="Featured projects and case studies">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">
+          <span class="gradient-text">Project Case Study Lab</span>
+        </h2>
+        <p class="section-subtitle animate-on-scroll">Real-world projects built with modern architecture and clean code</p>
+
+        <div class="project-filter animate-on-scroll">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+          <button class="filter-btn" data-filter="ai">AI / Cloud</button>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card glass-card animate-on-scroll" data-project="ai-image" data-category="ai frontend">
+            <div class="project-card-glow" aria-hidden="true"></div>
+            <div class="project-thumb">
+              <div class="project-thumb-inner">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(168,85,247,0.5)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              </div>
+              <div class="project-overlay">
+                <span class="project-overlay-text">View Case Study</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>AI Image Generator</h3>
+              <p class="project-impact">Transforms text prompts into stunning visual outputs in seconds</p>
+              <div class="project-tags">
+                <span class="tag">React.js</span>
+                <span class="tag">AI API</span>
+                <span class="tag">CSS3</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass-card animate-on-scroll" data-project="portfolio" data-category="frontend">
+            <div class="project-card-glow" aria-hidden="true"></div>
+            <div class="project-thumb">
+              <div class="project-thumb-inner">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(236,72,153,0.5)" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <div class="project-overlay">
+                <span class="project-overlay-text">View Case Study</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Developer Portfolio</h3>
+              <p class="project-impact">Premium glassmorphism portfolio with 95+ Lighthouse performance score</p>
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass-card animate-on-scroll" data-project="fullstack" data-category="fullstack">
+            <div class="project-card-glow" aria-hidden="true"></div>
+            <div class="project-thumb">
+              <div class="project-thumb-inner">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(59,130,246,0.5)" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><circle cx="6" cy="6" r="1"/><circle cx="6" cy="18" r="1"/></svg>
+              </div>
+              <div class="project-overlay">
+                <span class="project-overlay-text">View Case Study</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>MERN Full Stack App</h3>
+              <p class="project-impact">Enterprise-grade web app with JWT auth, REST API, and React frontend</p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">MongoDB</span>
+                <span class="tag">Express</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card glass-card animate-on-scroll" data-project="firebase-chat" data-category="fullstack ai">
+            <div class="project-card-glow" aria-hidden="true"></div>
+            <div class="project-thumb">
+              <div class="project-thumb-inner">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(168,85,247,0.5)" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div class="project-overlay">
+                <span class="project-overlay-text">View Case Study</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h3>Real-time Chat Platform</h3>
+              <p class="project-impact">Firebase-powered real-time messaging with cloud functions</p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Firebase</span>
+                <span class="tag">Cloud Functions</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-overlay"></div>
+      <div class="modal-content glass-card modal-case-study">
+        <button class="modal-close" aria-label="Close modal">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="modal-body">
+          <div class="modal-badge" id="modalBadge">Case Study</div>
+          <h3 class="modal-title stagger-item" id="modalTitle"></h3>
+          <div class="modal-section stagger-item">
+            <h4>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+              Problem
+            </h4>
+            <p id="modalProblem"></p>
+          </div>
+          <div class="modal-section stagger-item">
+            <h4>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+              Solution
+            </h4>
+            <p id="modalSolution"></p>
+          </div>
+          <div class="modal-section stagger-item">
+            <h4>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Key Features
+            </h4>
+            <ul id="modalFeatures"></ul>
+          </div>
+          <div class="modal-section stagger-item">
+            <h4>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+              Tech Stack
+            </h4>
+            <div id="modalTech" class="modal-tags"></div>
+          </div>
+          <div class="modal-actions stagger-item">
+            <a id="modalGithub" href="#" class="btn btn-primary btn-ripple" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a id="modalDemo" href="#" class="btn btn-secondary btn-ripple" target="_blank" rel="noopener">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== MODULE 5: EXPERIENCE & TRAINING ========== -->
+    <section id="experience" class="experience section" aria-label="Professional experience and training">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">
+          <span class="gradient-text">Experience &amp; Training</span>
+        </h2>
+        <p class="section-subtitle animate-on-scroll">Building credibility through real-world practice and industry exposure</p>
+
+        <div class="timeline">
+          <div class="timeline-line" aria-hidden="true"></div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-dot">
+              <div class="timeline-dot-ring"></div>
+            </div>
+            <article class="timeline-card glass-card">
+              <div class="timeline-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                Sep 2025 – Present
+              </div>
+              <h3>Web Developer</h3>
+              <p class="timeline-company">Seek Unique Productions</p>
+              <ul class="timeline-impacts">
+                <li>Building responsive websites and modern web applications for real clients</li>
+                <li>Applying full-stack development skills in production environments</li>
+                <li>Collaborating with design teams for pixel-perfect implementations</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-dot">
+              <div class="timeline-dot-ring"></div>
+            </div>
+            <article class="timeline-card glass-card">
+              <div class="timeline-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                Aug 2025 – Present
+              </div>
+              <h3>Industry Job Simulation Programs</h3>
+              <p class="timeline-company">Forage — Google Cloud, AWS, Deloitte, TATA, JPMorgan</p>
+              <ul class="timeline-impacts">
+                <li>Completed Generative AI with Vertex AI (Google Cloud)</li>
+                <li>Built Solutions Architecture designs (AWS)</li>
+                <li>Performed Data Analytics simulations (Deloitte &amp; TATA)</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-dot">
+              <div class="timeline-dot-ring"></div>
+            </div>
+            <article class="timeline-card glass-card">
+              <div class="timeline-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                Jun 2025 – Jul 2025
+              </div>
+              <h3>Dot Net Full Stack Training</h3>
+              <p class="timeline-company">Hindtech IT Solutions (ISO 9001:2015)</p>
+              <ul class="timeline-impacts">
+                <li>30-day intensive .NET training: C#, ASP.NET Core, Entity Framework</li>
+                <li>Built full-stack web applications with SQL Server backend</li>
+                <li>Learned industry-standard development practices and patterns</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-dot">
+              <div class="timeline-dot-ring"></div>
+            </div>
+            <article class="timeline-card glass-card">
+              <div class="timeline-date">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                Apr 2025 – Aug 2025
+              </div>
+              <h3>Operations Supervisor</h3>
+              <p class="timeline-company">Rajdhani Force Security</p>
+              <ul class="timeline-impacts">
+                <li>Led team operations and ensured quality standards</li>
+                <li>Developed strong leadership and management skills</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MODULE 6: CERTIFICATIONS — INDUSTRY PROOF VAULT ========== -->
+    <section id="certifications" class="certifications section" aria-label="Industry certifications and credentials">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">
+          <span class="gradient-text">Industry Proof Vault</span>
+        </h2>
+        <p class="section-subtitle animate-on-scroll">Verified credentials from leading tech companies</p>
+
+        <div class="cert-category animate-on-scroll">
+          <h3 class="cert-category-title">
+            <span class="cert-category-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a7 7 0 0 0-7 7c0 3 2 5.5 4 7l3 3 3-3c2-1.5 4-4 4-7a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2"/></svg>
+            </span>
+            Cloud &amp; AI
+          </h3>
+          <div class="certs-grid">
+            <article class="cert-card glass-card animate-on-scroll">
+              <div class="cert-logo">
+                <span class="cert-logo-text" style="color:#FF9900;font-weight:800;font-size:1.6rem;">aws</span>
+              </div>
+              <h3>Solutions Architecture Job Simulation</h3>
+              <p class="cert-issuer">AWS &middot; Forage</p>
+              <p class="cert-date">August 2025</p>
+              <button class="btn btn-sm btn-secondary btn-ripple cert-view-btn" data-cert="aws">View Certificate</button>
+            </article>
+            <article class="cert-card glass-card animate-on-scroll">
+              <div class="cert-logo">
+                <span class="cert-logo-text" style="color:#4285f4;font-weight:800;font-size:1.6rem;">G</span><span class="cert-logo-text" style="color:#0c9d58;font-weight:800;font-size:1.2rem;">oogle</span>
+              </div>
+              <h3>Intro to Generative AI Studio</h3>
+              <p class="cert-issuer">Google Cloud &middot; Simplilearn SkillUp</p>
+              <p class="cert-date">August 2025</p>
+              <button class="btn btn-sm btn-secondary btn-ripple cert-view-btn" data-cert="google">View Certificate</button>
+            </article>
+          </div>
+        </div>
+
+        <div class="cert-category animate-on-scroll">
+          <h3 class="cert-category-title">
+            <span class="cert-category-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+            </span>
+            Software Engineering
+          </h3>
+          <div class="certs-grid">
+            <article class="cert-card glass-card animate-on-scroll">
+              <div class="cert-logo">
+                <span class="cert-logo-text" style="color:#0a5dc2;font-weight:800;font-size:1.4rem;">JP</span><span class="cert-logo-text" style="color:#999;font-size:1.1rem;">Morgan</span>
+              </div>
+              <h3>Software Engineering Job Simulation</h3>
+              <p class="cert-issuer">JPMorgan Chase &middot; Forage</p>
+              <p class="cert-date">2025</p>
+              <button class="btn btn-sm btn-secondary btn-ripple cert-view-btn" data-cert="jpmorgan">View Certificate</button>
+            </article>
+            <article class="cert-card glass-card animate-on-scroll">
+              <div class="cert-logo">
+                <span class="cert-logo-text" style="color:#7c3aed;font-weight:800;font-size:1.4rem;">HT</span>
+              </div>
+              <h3>Dot Net Full Stack Training</h3>
+              <p class="cert-issuer">Hindtech IT Solutions</p>
+              <p class="cert-date">Jun – Jul 2025</p>
+              <button class="btn btn-sm btn-secondary btn-ripple cert-view-btn" data-cert="hindtech">View Certificate</button>
+            </article>
+          </div>
+        </div>
+
+        <div class="cert-category animate-on-scroll">
+          <h3 class="cert-category-title">
+            <span class="cert-category-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.2-8.56"/><path d="M21 3v4h-4"/><path d="M12 7v5l3 3"/></svg>
+            </span>
+            Data &amp; Analytics
+          </h3>
+          <div class="certs-grid">
+            <article class="cert-card glass-card animate-on-scroll">
+              <div class="cert-logo">
+                <span class="cert-logo-text" style="color:#86bc25;font-weight:800;font-size:1.3rem;">Deloitte.</span>
+              </div>
+              <h3>Data Analytics Job Simulation</h3>
+              <p class="cert-issuer">Deloitte Australia &middot; Forage</p>
+              <p class="cert-date">August 2025</p>
+              <button class="btn btn-sm btn-secondary btn-ripple cert-view-btn" data-cert="deloitte">View Certificate</button>
+            </article>
+            <article class="cert-card glass-card animate-on-scroll">
+              <div class="cert-logo">
+                <span class="cert-logo-text" style="color:#3754a0;font-weight:800;font-size:1.4rem;">TATA</span>
+              </div>
+              <h3>GenAI Powered Data Analytics</h3>
+              <p class="cert-issuer">TATA &middot; Forage</p>
+              <p class="cert-date">August 2025</p>
+              <button class="btn btn-sm btn-secondary btn-ripple cert-view-btn" data-cert="tata">View Certificate</button>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div id="certModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-overlay"></div>
+      <div class="modal-content glass-card modal-cert-content">
+        <button class="modal-close" aria-label="Close certificate">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+        <div class="modal-body cert-modal-body">
+          <img id="certImage" src="" alt="Certificate" loading="lazy" class="cert-modal-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== EDUCATION ========== -->
+    <section id="education" class="education section" aria-label="Education">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">
+          <span class="gradient-text">Education</span>
+        </h2>
+        <article class="education-card glass-card animate-on-scroll">
+          <div class="edu-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="url(#eduGrad)" stroke-width="1.5">
+              <defs>
+                <linearGradient id="eduGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#a855f7"/>
+                  <stop offset="100%" stop-color="#ec4899"/>
+                </linearGradient>
+              </defs>
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/>
+            </svg>
+          </div>
+          <div class="edu-info">
+            <h3>Diploma in Information Technology</h3>
+            <p class="edu-specialization">Specialization: Artificial Intelligence &amp; Machine Learning</p>
+            <p class="edu-institution">Government Polytechnic, Lucknow</p>
+            <p class="edu-board">Board: BTEUP (Board of Technical Education, Uttar Pradesh)</p>
+            <p class="edu-duration">July 2024 – July 2027</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========== MODULE 7: CONTACT ========== -->
+    <section id="contact" class="contact section" aria-label="Contact Suraj Prajapati">
+      <div class="container">
+        <h2 class="section-title animate-on-scroll">
+          <span class="gradient-text">Let's Connect</span>
+        </h2>
+        <p class="section-subtitle animate-on-scroll">Open for opportunities, collaborations, and interesting conversations</p>
+
+        <div class="contact-wrapper">
+          <div class="contact-grid">
+            <a href="mailto:kingsuraj6387@gmail.com" class="contact-card glass-card animate-on-scroll" aria-label="Email me">
+              <div class="contact-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              </div>
+              <h3>Email</h3>
+              <p>kingsuraj6387@gmail.com</p>
+              <span class="contact-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </span>
+            </a>
+            <a href="https://www.linkedin.com/in/suraj-prajapati-0904b92b9" target="_blank" rel="noopener" class="contact-card glass-card animate-on-scroll" aria-label="LinkedIn profile">
+              <div class="contact-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+              </div>
+              <h3>LinkedIn</h3>
+              <p>Connect with me</p>
+              <span class="contact-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </span>
+            </a>
+            <a href="https://github.com/" target="_blank" rel="noopener" class="contact-card glass-card animate-on-scroll" aria-label="GitHub profile">
+              <div class="contact-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58v-2.23c-3.34.73-4.04-1.41-4.04-1.41-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.21.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.25 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.82.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <h3>GitHub</h3>
+              <p>See my code</p>
+              <span class="contact-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </span>
+            </a>
+            <a href="https://x.com/SPrajapati11982/about" class="contact-card glass-card animate-on-scroll" aria-label="twite here">
+              <div class="contact-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              </div>
+              <h3>Twitter</h3>
+              <p>@SPrajapati11982</p>
+              <span class="contact-arrow">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== CHAT WIDGET ========== -->
+  <div id="chatWidget" class="chat-widget" aria-label="Quick chat">
+    <button class="chat-toggle" id="chatToggle" aria-label="Open chat">
+      <svg class="chat-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      <svg class="chat-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div class="chat-panel glass-card" id="chatPanel" aria-hidden="true">
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <div class="chat-avatar">
+            <svg width="20" height="20" viewBox="0 0 60 60" aria-hidden="true">
+              <polygon points="10,10 50,10 30,30 50,50 10,50 10,45 40,45 25,30 40,15 10,15" fill="url(#chatGrad)"/>
+              <defs><linearGradient id="chatGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#a855f7"/><stop offset="100%" stop-color="#ec4899"/></linearGradient></defs>
+            </svg>
+          </div>
+          <div>
+            <h3>Suraj Prajapati</h3>
+            <span class="chat-status">Typically replies within 24h</span>
+          </div>
+        </div>
+        <button class="chat-close" id="chatClose" aria-label="Close chat">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="chat-msg bot">
+          <div class="chat-msg-content">Hey! Thanks for visiting my portfolio. How can I help you today?</div>
+        </div>
+      </div>
+      <div class="chat-quick-actions">
+        <button class="chat-quick-btn" data-msg="hiring">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3h-8v4h8V3z"/></svg>
+          Hiring Inquiry
+        </button>
+        <button class="chat-quick-btn" data-msg="collab">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Collaboration
+        </button>
+        <button class="chat-quick-btn" data-msg="general">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          General
+        </button>
+      </div>
+      <div class="chat-input-wrap">
+        <input type="text" class="chat-input" id="chatInput" placeholder="Type a message..." aria-label="Chat message">
+        <button class="chat-send" id="chatSend" aria-label="Send message">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== MODULE 8: FOOTER — BRAND SIGNATURE ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-divider-wrap" aria-hidden="true">
+      <div class="footer-divider"></div>
+    </div>
+    <div class="container footer-inner">
+      <a href="#hero" class="footer-logo" aria-label="Back to top">
+        <svg class="sigma-logo" viewBox="0 0 60 60" width="32" height="32" aria-hidden="true">
+          <polygon points="10,10 50,10 30,30 50,50 10,50 10,45 40,45 25,30 40,15 10,15" fill="url(#footGrad)" />
+          <defs>
+            <linearGradient id="footGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#a855f7"/>
+              <stop offset="100%" stop-color="#ec4899"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="footer-brand">The Sigma Developers</span>
+      </a>
+      <p class="footer-tagline">Crafted with precision. Built for impact.</p>
+      <div class="footer-links">
+        <a href="mailto:kingsuraj6387@gmail.com" class="footer-link">Email</a>
+        <span class="footer-dot">&middot;</span>
+        <a href="https://www.linkedin.com/in/suraj-prajapati-0904b92b9" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+        <span class="footer-dot">&middot;</span>
+        <a href="https://github.com/" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 Suraj Prajapati. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/animations.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/ai-chat.js" defer></script>
+</body>
+</html>
+

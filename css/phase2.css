@@ -1,0 +1,628 @@
+/* phase2.css */
+/* ==========================================
+   PHASE 2 CSS - Premium Upgrades
+   ========================================== */
+
+/* ============ CURSOR GLOW ============ */
+.cursor-glow {
+  display: none;
+}
+
+/* ============ HERO PHOTO ============ */
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  display: block;
+}
+
+/* ============ BUTTON RIPPLE ============ */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple .ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transform: scale(0);
+  animation: rippleAnim 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes rippleAnim {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ============ PROJECT FILTER ============ */
+.project-filter {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(168,85,247,0.3);
+  background: rgba(168,85,247,0.08);
+}
+
+.filter-btn.active {
+  background: var(--gradient-primary);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(168,85,247,0.3);
+}
+
+/* ============ PROJECT CARD ENHANCEMENTS ============ */
+.project-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s;
+}
+
+.project-card-glow {
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.3), rgba(236,72,153,0.2), rgba(59,130,246,0.2));
+  opacity: 0;
+  transition: opacity 0.4s;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-card:hover .project-card-glow {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 12px 40px rgba(168,85,247,0.15);
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.project-thumb {
+  height: 180px;
+  background: linear-gradient(135deg, rgba(168,85,247,0.06), rgba(236,72,153,0.06));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-thumb-inner {
+  opacity: 0.6;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.project-card:hover .project-thumb-inner {
+  transform: scale(1.1);
+  opacity: 0.3;
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10,10,15,0.6);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay-text {
+  padding: 8px 20px;
+  border-radius: 30px;
+  background: var(--gradient-primary);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transform: translateY(8px);
+  transition: transform 0.4s;
+}
+
+.project-card:hover .project-overlay-text {
+  transform: translateY(0);
+}
+
+.project-impact {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.project-info {
+  padding: 20px 24px 24px;
+}
+
+.project-info h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+/* ============ MODAL CASE STUDY ENHANCEMENTS ============ */
+.modal-case-study {
+  max-width: 640px;
+}
+
+.modal-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: rgba(168,85,247,0.12);
+  color: var(--purple);
+  border: 1px solid rgba(168,85,247,0.2);
+  margin-bottom: 16px;
+}
+
+.modal.active .stagger-item:nth-child(1) { animation: staggerIn 0.4s 0.05s both; }
+.modal.active .stagger-item:nth-child(2) { animation: staggerIn 0.4s 0.1s both; }
+.modal.active .stagger-item:nth-child(3) { animation: staggerIn 0.4s 0.15s both; }
+.modal.active .stagger-item:nth-child(4) { animation: staggerIn 0.4s 0.2s both; }
+.modal.active .stagger-item:nth-child(5) { animation: staggerIn 0.4s 0.25s both; }
+.modal.active .stagger-item:nth-child(6) { animation: staggerIn 0.4s 0.3s both; }
+
+@keyframes staggerIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-section h4 svg {
+  color: var(--purple);
+  flex-shrink: 0;
+}
+
+/* ============ TIMELINE ENHANCEMENTS ============ */
+.timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 48px auto 0;
+  padding-left: 48px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--purple), var(--pink), rgba(168,85,247,0.1));
+}
+
+.timeline::before {
+  display: none;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 36px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -40px;
+  top: 24px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  box-shadow: 0 0 16px rgba(168,85,247,0.5);
+  z-index: 2;
+}
+
+.timeline-dot-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(168,85,247,0.3);
+  animation: ringPulse 3s ease-in-out infinite;
+}
+
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.4); opacity: 0; }
+}
+
+.timeline-card {
+  padding: 28px;
+  transition: var(--transition);
+}
+
+.timeline-card:hover {
+  transform: translateX(4px);
+  box-shadow: var(--shadow-glow);
+}
+
+.timeline-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--purple);
+  margin-bottom: 10px;
+}
+
+.timeline-date svg {
+  flex-shrink: 0;
+}
+
+.timeline-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.timeline-company {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.timeline-impacts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeline-impacts li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding: 3px 0 3px 18px;
+  position: relative;
+}
+
+.timeline-impacts li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+}
+
+/* ============ CERTIFICATION CATEGORIES ============ */
+.cert-category {
+  margin-bottom: 48px;
+}
+
+.cert-category:last-child {
+  margin-bottom: 0;
+}
+
+.cert-category-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+.cert-category-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: rgba(168,85,247,0.1);
+  flex-shrink: 0;
+}
+
+.cert-category-icon svg {
+  color: var(--purple);
+}
+
+.cert-card {
+  padding: 28px;
+  text-align: center;
+  transition: transform 0.4s, box-shadow 0.4s;
+  position: relative;
+}
+
+.cert-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(168,85,247,0.15);
+}
+
+/* ============ CONTACT ENHANCEMENTS ============ */
+.contact-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(168,85,247,0.15);
+  border-color: rgba(168,85,247,0.3);
+}
+
+.contact-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(168,85,247,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s, background 0.4s;
+}
+
+.contact-card-icon svg {
+  color: var(--purple);
+}
+
+.contact-card:hover .contact-card-icon {
+  transform: scale(1.1);
+  background: rgba(168,85,247,0.2);
+}
+
+.contact-arrow {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  opacity: 0;
+  transform: translate(-4px, 4px);
+  transition: opacity 0.3s, transform 0.3s;
+  color: var(--text-muted);
+}
+
+.contact-card:hover .contact-arrow {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.contact-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.contact-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  word-break: break-all;
+}
+
+/* ============ CHAT ENHANCEMENTS ============ */
+.chat-toggle {
+  position: relative;
+}
+
+.chat-icon-close {
+  display: none;
+}
+
+.chat-widget.chat-open .chat-icon-open {
+  display: none;
+}
+
+.chat-widget.chat-open .chat-icon-close {
+  display: block;
+}
+
+.chat-header-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(168,85,247,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chat-header h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chat-status {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.chat-msg-content {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.chat-msg {
+  padding: 10px 14px;
+  border-radius: 12px;
+  max-width: 85%;
+  animation: msgIn 0.3s ease-out;
+}
+
+@keyframes msgIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-msg.bot {
+  background: rgba(168,85,247,0.12);
+  color: var(--text-primary);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.chat-msg.user {
+  background: var(--gradient-primary);
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-quick-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chat-quick-btn svg {
+  flex-shrink: 0;
+}
+
+/* ============ FOOTER ENHANCEMENTS ============ */
+.footer {
+  padding: 0 0 40px;
+}
+
+.footer-divider-wrap {
+  padding: 0 24px;
+  margin-bottom: 40px;
+}
+
+.footer-divider {
+  height: 1px;
+  background: var(--gradient-primary);
+  background-size: 200% 100%;
+  animation: gradientShift 6s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  transition: transform 0.3s;
+}
+
+.footer-logo:hover {
+  transform: translateY(-2px);
+}
+
+.footer-brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer-link {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--purple);
+}
+
+.footer-dot {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
