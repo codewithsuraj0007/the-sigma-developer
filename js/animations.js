@@ -31,6 +31,9 @@
     rootMargin: '0px 0px -40px 0px'
   });
 
+  // Export observer globally for other scripts
+  window.observer = observer;
+
   // Observe all animate-on-scroll elements
   document.querySelectorAll('.animate-on-scroll').forEach(function (el) {
     observer.observe(el);

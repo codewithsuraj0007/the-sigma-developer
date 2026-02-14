@@ -262,4 +262,26 @@
     });
   });
 
+  // Magnetic button effect
+  document.querySelectorAll('.btn-magnetic, .btn').forEach(function (btn) {
+    btn.addEventListener('mousemove', function (e) {
+      var rect = btn.getBoundingClientRect();
+      var x = e.clientX - rect.left - rect.width / 2;
+      var y = e.clientY - rect.top - rect.height / 2;
+      var distance = Math.sqrt(x * x + y * y);
+      var maxDistance = 50;
+      
+      if (distance < maxDistance) {
+        var strength = (maxDistance - distance) / maxDistance;
+        var moveX = x * strength * 0.3;
+        var moveY = y * strength * 0.3;
+        btn.style.transform = 'translate(' + moveX + 'px, ' + moveY + 'px)';
+      }
+    });
+    
+    btn.addEventListener('mouseleave', function () {
+      btn.style.transform = '';
+    });
+  });
+
 })();

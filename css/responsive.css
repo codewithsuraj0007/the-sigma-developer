@@ -159,6 +159,19 @@
     padding: 24px;
   }
 
+  .edu-results {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .result-top {
+    text-align: left;
+  }
+
+  .result-actions {
+    flex-wrap: wrap;
+  }
+
   .modal-content {
     padding: 24px;
     width: 95%;

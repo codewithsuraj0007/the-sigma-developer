@@ -5,8 +5,8 @@
 
 /* Base glass card */
 .glass-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -14,13 +14,13 @@
 
 /* Glass card with hover glow */
 .glass-card:hover {
-  border-color: rgba(168, 85, 247, 0.15);
+  border-color: var(--border-glass);
 }
 
 /* Glass Navigation */
 .glass-nav {
-  background: rgba(10, 10, 15, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -60,7 +60,7 @@
 }
 
 .nav-brand .accent {
-  color: var(--purple);
+  color: var(--accent-1);
 }
 
 .nav-links {
@@ -92,12 +92,13 @@
   width: calc(100% - 20px);
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(90deg, #a855f7, #6366f1, #ec4899);
+  background: var(--gradient-primary);
   background-size: 200% 100%;
   animation: gradientShift 3s ease infinite;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: center;
-  box-shadow: 0 0 8px rgba(168, 85, 247, 0.5), 0 0 16px rgba(168, 85, 247, 0.2);
+  box-shadow: 0 0 8px var(--accent-1), 0 0 16px var(--accent-1);
+  opacity: 0.6;
 }
 
 .nav-link:hover::after {
@@ -276,6 +277,7 @@
   color: var(--text-primary);
   align-self: flex-start;
   border-bottom-left-radius: 4px;
+  border: 1px solid var(--border-glass);
 }
 
 .chat-msg.user {
@@ -308,7 +310,7 @@
 .chat-quick-btn:hover {
   background: rgba(168, 85, 247, 0.15);
   color: var(--text-primary);
-  border-color: rgba(168, 85, 247, 0.3);
+  border-color: var(--border-glass);
 }
 
 .chat-input-wrap {
@@ -332,7 +334,8 @@
 }
 
 .chat-input:focus {
-  border-color: rgba(168, 85, 247, 0.4);
+  border-color: var(--border-glass);
+  background: var(--glass-bg);
 }
 
 .chat-input::placeholder {
@@ -369,8 +372,9 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(168, 85, 247, 0.6);
+  background: var(--accent-1);
   animation: typingBounce 1.4s infinite;
+  opacity: 0.6;
 }
 
 .typing-indicator span:nth-child(2) {
@@ -401,6 +405,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  border: 1px solid var(--border-glass);
 }
 
 .chat-status {

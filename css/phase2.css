@@ -63,7 +63,7 @@
 
 .filter-btn:hover {
   color: var(--text-primary);
-  border-color: rgba(168,85,247,0.3);
+  border-color: var(--border-glass);
   background: rgba(168,85,247,0.08);
 }
 
@@ -104,7 +104,7 @@
 
 .project-card:hover {
   transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 12px 40px rgba(168,85,247,0.15);
+  box-shadow: var(--shadow-glow);
 }
 
 .project-card.hidden {
@@ -193,8 +193,8 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   background: rgba(168,85,247,0.12);
-  color: var(--purple);
-  border: 1px solid rgba(168,85,247,0.2);
+  color: var(--accent-1);
+  border: 1px solid var(--border-glass);
   margin-bottom: 16px;
 }
 
@@ -223,7 +223,7 @@
 }
 
 .modal-section h4 svg {
-  color: var(--purple);
+  color: var(--accent-1);
   flex-shrink: 0;
 }
 
@@ -241,7 +241,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--purple), var(--pink), rgba(168,85,247,0.1));
+  background: linear-gradient(to bottom, var(--accent-1), var(--accent-2), rgba(168,85,247,0.1));
 }
 
 .timeline::before {
@@ -294,7 +294,7 @@
   gap: 6px;
   font-size: 0.8rem;
   font-family: var(--font-mono);
-  color: var(--purple);
+  color: var(--accent-1);
   margin-bottom: 10px;
 }
 
@@ -371,7 +371,7 @@
 }
 
 .cert-category-icon svg {
-  color: var(--purple);
+  color: var(--accent-1);
 }
 
 .cert-card {
@@ -383,7 +383,7 @@
 
 .cert-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(168,85,247,0.15);
+  box-shadow: var(--shadow-glow);
 }
 
 /* ============ CONTACT ENHANCEMENTS ============ */
@@ -405,8 +405,8 @@
 
 .contact-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 12px 40px rgba(168,85,247,0.15);
-  border-color: rgba(168,85,247,0.3);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--border-glass);
 }
 
 .contact-card-icon {
@@ -421,7 +421,7 @@
 }
 
 .contact-card-icon svg {
-  color: var(--purple);
+  color: var(--accent-1);
 }
 
 .contact-card:hover .contact-card-icon {
@@ -614,7 +614,7 @@
 }
 
 .footer-link:hover {
-  color: var(--purple);
+  color: var(--accent-1);
 }
 
 .footer-dot {
