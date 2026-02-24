@@ -82,4 +82,38 @@
       heroCard.style.transform = 'perspective(800px) rotateY(0) rotateX(0)';
     });
   }
+
+  // Subtle parallax for flagship section decorative layers
+  var parallaxLayers = Array.prototype.slice.call(document.querySelectorAll('.flagship-parallax-layer'));
+  var canAnimateParallax = parallaxLayers.length > 0 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var parallaxTicking = false;
+
+  function updateFlagshipParallax() {
+    var viewportH = window.innerHeight || 1;
+    parallaxLayers.forEach(function (layer) {
+      var speed = parseFloat(layer.getAttribute('data-parallax-speed') || '0.08');
+      var rect = layer.getBoundingClientRect();
+      var centerOffset = rect.top + rect.height / 2 - viewportH / 2;
+      var movement = centerOffset * speed * -1;
+      layer.style.transform = 'translate3d(0,' + movement.toFixed(2) + 'px,0)';
+    });
+    parallaxTicking = false;
+  }
+
+  if (canAnimateParallax) {
+    updateFlagshipParallax();
+    window.addEventListener('scroll', function () {
+      if (!parallaxTicking) {
+        requestAnimationFrame(updateFlagshipParallax);
+        parallaxTicking = true;
+      }
+    }, { passive: true });
+
+    window.addEventListener('resize', function () {
+      if (!parallaxTicking) {
+        requestAnimationFrame(updateFlagshipParallax);
+        parallaxTicking = true;
+      }
+    });
+  }
 })();
