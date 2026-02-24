@@ -2,7 +2,7 @@
 
 class ThemeEngine {
   constructor() {
-    this.currentTheme = localStorage.getItem('portfolio-theme') || 'night';
+    this.currentTheme = localStorage.getItem('portfolio-theme') || 'day';
     this.heroImage = null;
     this.init();
   }
