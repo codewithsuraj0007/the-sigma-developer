@@ -41,6 +41,53 @@
     });
   });
 
+  // Flagship section collapse toggle
+  var flagshipShell = document.querySelector('.flagship-shell');
+  var flagshipHeadline = document.querySelector('.flagship-shell-headline');
+  var flagshipToggle = document.getElementById('flagshipToggle');
+  var flagshipCollapsible = document.getElementById('flagshipCollapsible');
+  var flagshipPreview = document.querySelector('.flagship-preview');
+  if (flagshipShell && flagshipToggle && flagshipCollapsible) {
+    function setFlagshipState(open) {
+      flagshipCollapsible.classList.toggle('collapsed', !open);
+      flagshipShell.classList.toggle('is-open', open);
+      flagshipToggle.setAttribute('aria-expanded', String(open));
+      flagshipToggle.textContent = open ? 'Close Project Experience' : 'Open Project Experience';
+    }
+
+    setFlagshipState(false);
+
+    flagshipToggle.addEventListener('click', function () {
+      var nextOpen = flagshipCollapsible.classList.contains('collapsed');
+      setFlagshipState(nextOpen);
+    });
+
+    if (flagshipHeadline) {
+      flagshipHeadline.style.cursor = 'pointer';
+      flagshipHeadline.addEventListener('click', function () {
+        if (flagshipCollapsible.classList.contains('collapsed')) {
+          setFlagshipState(true);
+        }
+      });
+    }
+
+    if (flagshipPreview) {
+      flagshipPreview.addEventListener('mousemove', function (e) {
+        if (!flagshipShell.classList.contains('is-open')) return;
+        var rect = flagshipPreview.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        var rotY = x * 4.5;
+        var rotX = y * -3.8;
+        flagshipPreview.style.transform = 'translateY(-2px) rotateX(' + rotX.toFixed(2) + 'deg) rotateY(' + rotY.toFixed(2) + 'deg) scale(1.01)';
+      });
+
+      flagshipPreview.addEventListener('mouseleave', function () {
+        flagshipPreview.style.transform = '';
+      });
+    }
+  }
+
   var projectData = {
     'ai-image': {
       title: 'AI Image Generator',
@@ -87,22 +134,23 @@
       github: '#',
       demo: '#'
     },
-    'firebase-chat': {
-      title: 'Real-time Chat Platform',
-      problem: 'Teams and communities need instant, reliable messaging solutions that work seamlessly across devices without complex infrastructure setup.',
-      solution: 'Created a real-time chat platform powered by Firebase Firestore with live message syncing, user presence, and cloud functions for backend logic.',
-      tech: ['React.js', 'Firebase', 'Firestore', 'Cloud Functions', 'Auth'],
+    'rana-computers': {
+      title: 'Rana Computers - Modern Tech Store',
+      problem: 'Growing computer retail brands need a modern digital storefront that communicates trust, showcases products clearly, and performs reliably on all devices.',
+      solution: 'Built and deployed a production-ready storefront experience with responsive architecture, clean component flow, optimized rendering, and conversion-focused UX.',
+      tech: ['React.js', 'Next.js', 'JavaScript', 'CSS3', 'Vercel'],
       features: [
-        'Real-time message delivery with Firestore listeners',
-        'Firebase Authentication for secure user management',
-        'Cloud Functions for server-side message processing',
-        'Online/offline presence indicators',
-        'Responsive design optimized for mobile and desktop'
+        'Modern storefront UI with clear content hierarchy',
+        'Responsive layout optimized for mobile, tablet, and desktop',
+        'Fast page delivery and clean render behavior',
+        'Scalable component structure for future feature expansion',
+        'Production deployment pipeline on Vercel'
       ],
-      github: '#',
-      demo: '#'
+      github: 'https://github.com/codewithsuraj0007/rana-computers',
+      demo: 'https://rana-computers.vercel.app/',
+      linkedin: 'https://www.linkedin.com/posts/suraj-prajapati-0904b92b9_webdevelopment-reactjs-nextjs-activity-7391445851551723520-cNcq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExtOCwBfOY7fHbLSOOTCV0eBe3OCFsaLo8'
     }
-  };
+  }; 
 
   var projectModal = document.getElementById('projectModal');
   var modalTitle = document.getElementById('modalTitle');
@@ -112,6 +160,7 @@
   var modalFeatures = document.getElementById('modalFeatures');
   var modalGithub = document.getElementById('modalGithub');
   var modalDemo = document.getElementById('modalDemo');
+  var modalLinkedin = document.getElementById('modalLinkedin');
 
   function openProjectModal(projectKey) {
     var data = projectData[projectKey];
@@ -138,6 +187,14 @@
 
     modalGithub.href = data.github;
     modalDemo.href = data.demo;
+    if (modalLinkedin) {
+      if (data.linkedin) {
+        modalLinkedin.href = data.linkedin;
+        modalLinkedin.style.display = 'inline-flex';
+      } else {
+        modalLinkedin.style.display = 'none';
+      }
+    }
 
     projectModal.classList.add('active');
     projectModal.setAttribute('aria-hidden', 'false');
@@ -285,3 +342,6 @@
   });
 
 })();
+
+
+
