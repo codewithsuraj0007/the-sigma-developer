@@ -22,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="css/base.css">
@@ -38,6 +38,8 @@
   <link rel="stylesheet" href="css/blog.css">
   <link rel="stylesheet" href="css/chat.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/day-refresh.css">
+  <link rel="stylesheet" href="css/day-clay.css">
 
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%CE%A3</text></svg>">
@@ -46,7 +48,7 @@
   <script>
     (function () {
       const theme = localStorage.getItem('portfolio-theme');
-      if (theme === 'day') {
+      if (theme !== 'night') {
         document.documentElement.setAttribute('data-theme', 'day');
       }
     })();
