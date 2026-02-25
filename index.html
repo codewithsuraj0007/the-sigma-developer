@@ -38,8 +38,8 @@
   <link rel="stylesheet" href="css/blog.css">
   <link rel="stylesheet" href="css/chat.css">
   <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="css/day-refresh.css">
   <link rel="stylesheet" href="css/day-clay.css">
+  <link rel="stylesheet" href="css/motion-layer.css">
 
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%CE%A3</text></svg>">
@@ -137,9 +137,11 @@
             <stop offset="100%" stop-color="#ec4899" />
           </linearGradient>
         </defs>
-      </svg>
     </div>
   </div>
+
+  <div class="grain-overlay" aria-hidden="true"></div>
+  <div class="theme-switch-overlay" id="themeOverlay" aria-hidden="true"></div>
 
   <header id="navbar" class="navbar glass-nav" role="banner">
     <nav class="nav-inner" aria-label="Main navigation">
@@ -211,7 +213,7 @@
             <span class="badge-dot"></span>
             Available for opportunities
           </div>
-          <h1 class="hero-title animate-on-scroll blur-reveal">
+          <h1 class="hero-title animate-on-scroll blur-reveal blur-sharpen">
             <span class="line">Hi, I'm <span class="gradient-text">Suraj Prajapati</span></span>
             <span class="line">MERN Stack Developer</span>
             <span class="line typing-line">&amp; AI Integration Engineer</span>
@@ -219,35 +221,37 @@
           <p class="hero-tagline animate-on-scroll">Building modern, scalable web applications with React, Node.js, and
             Cloud technologies.</p>
           <div class="hero-cta animate-on-scroll">
-            <a href="#projects" class="btn btn-primary btn-ripple">
+            <a href="#projects" class="btn btn-primary btn-ripple btn-magnetic">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="3" width="20" height="14" rx="2" />
                 <path d="M8 21h8M12 17v4" />
               </svg>
               View Projects
             </a>
-            <a href="#contact" class="btn btn-secondary btn-ripple">
+            <a href="#contact" class="btn btn-secondary btn-ripple btn-magnetic">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="4" width="20" height="12" rx="2" />
-                  <path d="M8 20h8M12 16v4" />
+                <path d="M8 20h8M12 16v4" />
               </svg>
               Contact Me
             </a>
           </div>
         </div>
-        <div class="hero-image-wrap animate-on-scroll">
-          <div class="hero-image-card glass-card" id="heroCard">
+        <div class="hero-image-wrap animate-on-scroll motion-reveal reveal-s1">
+          <div class="hero-image-card glass-card shimmer-border" id="heroCard">
             <div class="hero-image-glow" aria-hidden="true"></div>
             <img
               src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/e081f948-4881-461c-b082-9b0ae0e9c382/PROFILE-IMAGE-1770387143105.jpeg?width=800&height=800&resize=contain"
-              data-night-src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/e081f948-4881-461c-b082-9b0ae0e9c382/PROFILE-IMAGE-1770387143105.jpeg?width=800&height=800&resize=contain"
-              data-day-src="images/profile-day-mode.jpg" alt="Suraj Prajapati - MERN Full Stack Developer"
-              class="hero-photo" loading="eager" width="320" height="380">
+              data-night-src="images/profile-night-mode.jpg" data-day-src="images/profile-day-mode.jpg"
+              alt="Suraj Prajapati - MERN Full Stack Developer" class="hero-photo" loading="eager" width="320"
+              height="380">
           </div>
         </div>
       </div>
       <div class="scroll-indicator" aria-hidden="true">
         <div class="scroll-line"></div>
+      </div>
+      <div class="hero-drift" style="position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0.2;">
       </div>
     </section>
 
@@ -258,15 +262,20 @@
           <span class="gradient-text">About Me</span>
         </h2>
         <div class="about-grid">
-          <div class="about-text">
-            <p class="about-line animate-on-scroll">I'm a passionate <strong>MERN Full Stack Developer</strong> from
+          <div class="about-text motion-reveal reveal-s2">
+            <p class="about-line animate-on-scroll motion-stagger">I'm a passionate <strong>MERN Full Stack
+                Developer</strong> from
               Lucknow, India.</p>
-            <p class="about-line animate-on-scroll">I specialize in building <strong>responsive websites</strong> and
+            <p class="about-line animate-on-scroll motion-stagger">I specialize in building <strong>responsive
+                websites</strong> and
               modern web applications using React.js, Node.js, and the latest technologies.</p>
-            <p class="about-line animate-on-scroll">Currently completing my diploma at <strong>Government Polytechnic,
+            <p class="about-line animate-on-scroll motion-stagger">Currently completing my diploma at <strong>Government
+                Polytechnic,
                 Lucknow</strong> with a focus on IT &amp; AI/ML.</p>
-            <p class="about-line animate-on-scroll">I've built projects ranging from <strong>LEARN TECH</strong> to full-stack web platforms with Firebase integration.</p>
-            <p class="about-line animate-on-scroll">Always eager to work on <strong>innovative ideas</strong> and bring
+            <p class="about-line animate-on-scroll motion-stagger">I've built projects ranging from <strong>LEARN
+                TECH</strong> to full-stack web platforms with Firebase and insforge (MCP) integration.</p>
+            <p class="about-line animate-on-scroll motion-stagger">Always eager to work on <strong>innovative
+                ideas</strong> and bring
               real-world applications to life.</p>
           </div>
           <div class="about-stats animate-on-scroll">
@@ -301,7 +310,7 @@
 
         <div class="os-grid">
           <!-- Frontend System -->
-          <article class="os-module glass-card animate-on-scroll" data-system="frontend">
+          <article class="os-module glass-card animate-on-scroll motion-reveal reveal-s3" data-system="frontend">
             <div class="os-module-header">
               <div class="os-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -340,7 +349,7 @@
           </article>
 
           <!-- Backend & APIs -->
-          <article class="os-module glass-card animate-on-scroll" data-system="backend">
+          <article class="os-module glass-card animate-on-scroll motion-reveal reveal-s3" data-system="backend">
             <div class="os-module-header">
               <div class="os-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -382,7 +391,7 @@
           </article>
 
           <!-- Cloud / AI / Data -->
-          <article class="os-module glass-card animate-on-scroll" data-system="cloud">
+          <article class="os-module glass-card animate-on-scroll motion-reveal reveal-s3" data-system="cloud">
             <div class="os-module-header">
               <div class="os-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -416,7 +425,7 @@
           </article>
 
           <!-- Tools, Payments & Deployment -->
-          <article class="os-module glass-card animate-on-scroll" data-system="tools">
+          <article class="os-module glass-card animate-on-scroll motion-reveal reveal-s3" data-system="tools">
             <div class="os-module-header">
               <div class="os-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -519,7 +528,7 @@
             <div class="why-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="2" y="4" width="20" height="12" rx="2" />
-                  <path d="M8 20h8M12 16v4" />
+                <path d="M8 20h8M12 16v4" />
               </svg>
             </div>
             <h3>Clear Communication</h3>
@@ -550,7 +559,7 @@
         </h2>
         <p class="section-subtitle animate-on-scroll">How I think about code, systems, and building products</p>
 
-        <div class="signals-grid" id="signalsGrid">
+        <div class="signals-grid motion-reveal reveal-s5" id="signalsGrid">
           <!-- Signals will be dynamically loaded by signals.js -->
         </div>
       </div>
@@ -578,144 +587,155 @@
               <p class="flagship-shell-kicker">Production-Ready Systems</p>
               <h3>UniExplorer - Global University Explorer</h3>
               <p class="flagship-meta">Created: January 2026 | Built By: The Sigma Developers</p>
-              <p class="flagship-head-summary">Global university discovery platform with real-time data and production UX.</p>
+              <p class="flagship-head-summary">Global university discovery platform with real-time data and production
+                UX.</p>
             </div>
             <button id="flagshipToggle" class="flagship-toggle" type="button" aria-expanded="false"
               aria-controls="flagshipCollapsible">Open Project Experience</button>
           </div>
           <div id="flagshipCollapsible" class="flagship-collapsible collapsed">
 
-          <div class="flagship-top-grid">
-            <div class="flagship-preview-wrap">
-              <div class="flagship-preview cinematic-preview">
-                <div class="mockup-topbar">
-                  <span></span><span></span><span></span>
-                  <p>UniExplorer - Global University Explorer</p>
+            <div class="flagship-top-grid">
+              <div class="flagship-preview-wrap">
+                <div class="flagship-preview cinematic-preview">
+                  <div class="mockup-topbar">
+                    <span></span><span></span><span></span>
+                    <p>UniExplorer - Global University Explorer</p>
+                  </div>
+                  <div class="mockup-screen">
+                    <iframe src="https://universityexplore.netlify.app/" title="UniExplorer live preview" loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="mockup-glass-layer flagship-parallax-layer" data-parallax-speed="0.05"
+                      aria-hidden="true"></div>
+                  </div>
                 </div>
-                <div class="mockup-screen">
-                  <iframe src="https://universityexplore.netlify.app/" title="UniExplorer live preview" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                  <div class="mockup-glass-layer flagship-parallax-layer" data-parallax-speed="0.05" aria-hidden="true"></div>
+              </div>
+
+              <div class="flagship-content">
+                <div class="flagship-badge">Built &amp; Deployed</div>
+                <h3>Global University Discovery Platform</h3>
+                <p class="flagship-meta">Data-driven, real-time, and built for decision support</p>
+                <p>
+                  A data-driven discovery engine designed to simplify global university search at scale. This is
+                  presented as a
+                  product system, not a demo: users can discover institutions worldwide with real-time results, smart
+                  filters,
+                  and decision support touchpoints.
+                </p>
+                <p class="flagship-problem">
+                  Students struggle to discover universities globally, filter by region/state, trust data freshness, and
+                  get
+                  personalized guidance. UniExplorer addresses this with real-time search, structured filtering logic, a
+                  built-in
+                  consultation channel, and a performance-optimized interface.
+                </p>
+                <div class="flagship-actions">
+                  <a href="https://universityexplore.netlify.app/" target="_blank" rel="noopener"
+                    class="btn btn-primary btn-ripple flagship-btn-live">View Live Demo</a>
+                  <a href="https://github.com/codewithsuraj0007/University-Explore.git" target="_blank" rel="noopener"
+                    class="btn btn-secondary btn-ripple">View Source Code</a>
+                  <a href="https://github.com/codewithsuraj0007/University-Explore.git#readme" target="_blank"
+                    rel="noopener" class="btn btn-secondary btn-ripple">View Case Study</a>
                 </div>
               </div>
             </div>
 
-            <div class="flagship-content">
-              <div class="flagship-badge">Built &amp; Deployed</div>
-              <h3>Global University Discovery Platform</h3>
-              <p class="flagship-meta">Data-driven, real-time, and built for decision support</p>
-              <p>
-                A data-driven discovery engine designed to simplify global university search at scale. This is presented as a
-                product system, not a demo: users can discover institutions worldwide with real-time results, smart filters,
-                and decision support touchpoints.
-              </p>
-              <p class="flagship-problem">
-                Students struggle to discover universities globally, filter by region/state, trust data freshness, and get
-                personalized guidance. UniExplorer addresses this with real-time search, structured filtering logic, a built-in
-                consultation channel, and a performance-optimized interface.
-              </p>
-              <div class="flagship-actions">
-                <a href="https://universityexplore.netlify.app/" target="_blank" rel="noopener"
-                  class="btn btn-primary btn-ripple flagship-btn-live">View Live Demo</a>
-                <a href="https://github.com/codewithsuraj0007/University-Explore.git" target="_blank" rel="noopener"
-                  class="btn btn-secondary btn-ripple">View Source Code</a>
-                <a href="https://github.com/codewithsuraj0007/University-Explore.git#readme" target="_blank" rel="noopener"
-                  class="btn btn-secondary btn-ripple">View Case Study</a>
-              </div>
+            <div class="flagship-feature-grid">
+              <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
+                style="--stagger-delay: 0.04s;">
+                <h4>Global Search Engine</h4>
+                <p>Worldwide institution lookup with production-minded query handling.</p>
+              </article>
+              <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
+                style="--stagger-delay: 0.08s;">
+                <h4>Advanced Filtering</h4>
+                <p>Region and state filtering logic tuned for practical discovery workflows.</p>
+              </article>
+              <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
+                style="--stagger-delay: 0.12s;">
+                <h4>Real-Time API Integration</h4>
+                <p>Live API-backed data retrieval with resilient state and error handling.</p>
+              </article>
+              <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
+                style="--stagger-delay: 0.16s;">
+                <h4>Auto Carousel System</h4>
+                <p>Automated feature/media rotation with smooth transitions and low overhead.</p>
+              </article>
+              <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
+                style="--stagger-delay: 0.2s;">
+                <h4>Consultation Workflow</h4>
+                <p>Integrated user guidance path for personalized exploration and support.</p>
+              </article>
+              <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
+                style="--stagger-delay: 0.24s;">
+                <h4>Fully Responsive UI</h4>
+                <p>Consistent search experience across desktop, tablet, and mobile breakpoints.</p>
+              </article>
+              <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
+                style="--stagger-delay: 0.28s;">
+                <h4>Glassmorphism Design</h4>
+                <p>Layered visual depth using glass surfaces and themed gradient accents.</p>
+              </article>
             </div>
-          </div>
 
-          <div class="flagship-feature-grid">
-            <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
-              style="--stagger-delay: 0.04s;">
-              <h4>Global Search Engine</h4>
-              <p>Worldwide institution lookup with production-minded query handling.</p>
-            </article>
-            <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
-              style="--stagger-delay: 0.08s;">
-              <h4>Advanced Filtering</h4>
-              <p>Region and state filtering logic tuned for practical discovery workflows.</p>
-            </article>
-            <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
-              style="--stagger-delay: 0.12s;">
-              <h4>Real-Time API Integration</h4>
-              <p>Live API-backed data retrieval with resilient state and error handling.</p>
-            </article>
-            <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
-              style="--stagger-delay: 0.16s;">
-              <h4>Auto Carousel System</h4>
-              <p>Automated feature/media rotation with smooth transitions and low overhead.</p>
-            </article>
-            <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
-              style="--stagger-delay: 0.2s;">
-              <h4>Consultation Workflow</h4>
-              <p>Integrated user guidance path for personalized exploration and support.</p>
-            </article>
-            <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
-              style="--stagger-delay: 0.24s;">
-              <h4>Fully Responsive UI</h4>
-              <p>Consistent search experience across desktop, tablet, and mobile breakpoints.</p>
-            </article>
-            <article class="flagship-feature-card animate-on-scroll flagship-scale flagship-stagger"
-              style="--stagger-delay: 0.28s;">
-              <h4>Glassmorphism Design</h4>
-              <p>Layered visual depth using glass surfaces and themed gradient accents.</p>
-            </article>
-          </div>
+            <div class="flagship-system-grid">
+              <article class="system-block animate-on-scroll flagship-stagger" style="--stagger-delay: 0.05s;">
+                <h4>Frontend Layer</h4>
+                <p>HTML5 interface composition, CSS3 glassmorphism system, and JavaScript ES6+ interaction flow.</p>
+              </article>
+              <article class="system-block animate-on-scroll flagship-stagger" style="--stagger-delay: 0.1s;">
+                <h4>API Layer</h4>
+                <p>Axios request orchestration over Hipolabs University API with response normalization.</p>
+              </article>
+              <article class="system-block animate-on-scroll flagship-stagger" style="--stagger-delay: 0.15s;">
+                <h4>Performance Layer</h4>
+                <p>Optimized loading, lazy rendering strategy, and minimal dependencies for predictable speed.</p>
+              </article>
+            </div>
 
-          <div class="flagship-system-grid">
-            <article class="system-block animate-on-scroll flagship-stagger" style="--stagger-delay: 0.05s;">
-              <h4>Frontend Layer</h4>
-              <p>HTML5 interface composition, CSS3 glassmorphism system, and JavaScript ES6+ interaction flow.</p>
-            </article>
-            <article class="system-block animate-on-scroll flagship-stagger" style="--stagger-delay: 0.1s;">
-              <h4>API Layer</h4>
-              <p>Axios request orchestration over Hipolabs University API with response normalization.</p>
-            </article>
-            <article class="system-block animate-on-scroll flagship-stagger" style="--stagger-delay: 0.15s;">
-              <h4>Performance Layer</h4>
-              <p>Optimized loading, lazy rendering strategy, and minimal dependencies for predictable speed.</p>
-            </article>
-          </div>
+            <div class="flagship-engineering-grid">
+              <article class="engineering-notes glass-card animate-on-scroll flagship-scale flagship-stagger"
+                style="--stagger-delay: 0.08s;">
+                <h4>How I Engineered This</h4>
+                <p>
+                  API handling uses structured async states with clear loading and error boundaries. Filtering is
+                  composed as
+                  deterministic client-side logic to keep interactions instant. Carousel behavior is tuned with
+                  lightweight timing
+                  control and minimal repaint pressure. Performance is improved by reducing dependency weight and
+                  optimizing data
+                  flow before render. Responsive breakpoints are validated for mobile-first stability without reducing
+                  desktop
+                  density.
+                </p>
+              </article>
+              <aside class="metrics-panel animate-on-scroll flagship-scale flagship-stagger"
+                style="--stagger-delay: 0.14s;">
+                <div class="metric-card"><span>195+</span>
+                  <p>Countries Supported</p>
+                </div>
+                <div class="metric-card"><span>Live</span>
+                  <p>Real-Time API Powered</p>
+                </div>
+                <div class="metric-card"><span>&lt; 1s</span>
+                  <p>Search Response Experience</p>
+                </div>
+                <div class="metric-card"><span>100%</span>
+                  <p>Fully Responsive</p>
+                </div>
+                <div class="metric-card"><span>Prod</span>
+                  <p>Production Deployed</p>
+                </div>
+              </aside>
+            </div>
 
-          <div class="flagship-engineering-grid">
-            <article class="engineering-notes glass-card animate-on-scroll flagship-scale flagship-stagger"
-              style="--stagger-delay: 0.08s;">
-              <h4>How I Engineered This</h4>
-              <p>
-                API handling uses structured async states with clear loading and error boundaries. Filtering is composed as
-                deterministic client-side logic to keep interactions instant. Carousel behavior is tuned with lightweight timing
-                control and minimal repaint pressure. Performance is improved by reducing dependency weight and optimizing data
-                flow before render. Responsive breakpoints are validated for mobile-first stability without reducing desktop
-                density.
-              </p>
-            </article>
-            <aside class="metrics-panel animate-on-scroll flagship-scale flagship-stagger" style="--stagger-delay: 0.14s;">
-              <div class="metric-card"><span>195+</span>
-                <p>Countries Supported</p>
-              </div>
-              <div class="metric-card"><span>Live</span>
-                <p>Real-Time API Powered</p>
-              </div>
-              <div class="metric-card"><span>&lt; 1s</span>
-                <p>Search Response Experience</p>
-              </div>
-              <div class="metric-card"><span>100%</span>
-                <p>Fully Responsive</p>
-              </div>
-              <div class="metric-card"><span>Prod</span>
-                <p>Production Deployed</p>
-              </div>
-            </aside>
-          </div>
-
-          <div class="flagship-cta animate-on-scroll flagship-scale flagship-stagger" style="--stagger-delay: 0.12s;">
-            <a href="https://universityexplore.netlify.app/" target="_blank" rel="noopener"
-              class="btn btn-primary btn-ripple flagship-btn-live">Explore Live</a>
-            <a href="https://github.com/codewithsuraj0007/University-Explore.git" target="_blank" rel="noopener"
-              class="btn btn-secondary btn-ripple">See the Code</a>
-            <a href="#contact" class="btn btn-secondary btn-ripple">Discuss Similar Project</a>
-          </div>
+            <div class="flagship-cta animate-on-scroll flagship-scale flagship-stagger" style="--stagger-delay: 0.12s;">
+              <a href="https://universityexplore.netlify.app/" target="_blank" rel="noopener"
+                class="btn btn-primary btn-ripple flagship-btn-live">Explore Live</a>
+              <a href="https://github.com/codewithsuraj0007/University-Explore.git" target="_blank" rel="noopener"
+                class="btn btn-secondary btn-ripple">See the Code</a>
+              <a href="#contact" class="btn btn-secondary btn-ripple">Discuss Similar Project</a>
+            </div>
           </div>
         </div>
       </div>
@@ -835,7 +855,8 @@
             </div>
             <div class="project-info">
               <h3>Rana Computers - Modern Tech Store</h3>
-              <p class="project-impact">Production-grade storefront experience with responsive UX, clean architecture, and
+              <p class="project-impact">Production-grade storefront experience with responsive UX, clean architecture,
+                and
                 deployment-ready frontend systems</p>
               <div class="project-tags">
                 <span class="tag">React.js</span>
@@ -914,9 +935,11 @@
               </svg>
               Live Demo
             </a>
-            <a id="modalLinkedin" href="#" class="btn btn-secondary btn-ripple" target="_blank" rel="noopener" style="display:none;">
+            <a id="modalLinkedin" href="#" class="btn btn-secondary btn-ripple" target="_blank" rel="noopener"
+              style="display:none;">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7 0h4.79v2.19h.07c.67-1.27 2.3-2.6 4.74-2.6C21.67 7.59 24 10.43 24 15.15V24h-5v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.98 2.02-2.98 4.1V24H8V8z" />
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7 0h4.79v2.19h.07c.67-1.27 2.3-2.6 4.74-2.6C21.67 7.59 24 10.43 24 15.15V24h-5v-7.75c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.98 2.02-2.98 4.1V24H8V8z" />
               </svg>
               LinkedIn Post
             </a>
@@ -1595,7 +1618,7 @@
       <svg class="chat-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="2">
         <rect x="2" y="4" width="20" height="12" rx="2" />
-                  <path d="M8 20h8M12 16v4" />
+        <path d="M8 20h8M12 16v4" />
       </svg>
       <svg class="chat-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
         stroke-width="2">
@@ -1651,7 +1674,7 @@
         <button class="chat-quick-btn" data-msg="general">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="2" y="4" width="20" height="12" rx="2" />
-                  <path d="M8 20h8M12 16v4" />
+            <path d="M8 20h8M12 16v4" />
           </svg>
           General
         </button>
@@ -1700,12 +1723,10 @@
 
   <script src="js/theme.js"></script>
   <script src="js/animations.js"></script>
+  <script src="js/motion-engine.js"></script>
   <script src="js/main.js"></script>
   <script src="js/signals.js"></script>
   <script src="js/ai-chat.js"></script>
 </body>
 
 </html>
-
-
-

@@ -62,7 +62,7 @@ class ThemeEngine {
     progress.className = 'scroll-progress';
     progress.innerHTML = '<div class="scroll-progress-bar"></div>';
     document.body.appendChild(progress);
-    
+
     let ticking = false;
     window.addEventListener('scroll', () => {
       if (!ticking) {
@@ -89,41 +89,33 @@ class ThemeEngine {
   }
 
   toggleTheme() {
-    // Activate transition overlay
-    this.transitionOverlay.classList.add('active');
-    
-    // Toggle theme
-    this.currentTheme = this.currentTheme === 'night' ? 'day' : 'night';
-    
-    // Apply theme with slight delay for smooth transition
+    const overlay = document.getElementById('themeOverlay');
+    if (overlay) overlay.style.opacity = '1';
+
     setTimeout(() => {
+      this.currentTheme = this.currentTheme === 'night' ? 'day' : 'night';
       if (this.currentTheme === 'day') {
         document.documentElement.setAttribute('data-theme', 'day');
       } else {
         document.documentElement.removeAttribute('data-theme');
       }
       this.applyHeroImageByTheme();
-      
-      // Save to localStorage
       localStorage.setItem('portfolio-theme', this.currentTheme);
-      
-      // Trigger theme personality effects
       this.triggerThemeEffects();
-    }, 100);
-    
-    // Remove overlay
-    setTimeout(() => {
-      this.transitionOverlay.classList.remove('active');
-    }, 500);
+
+      setTimeout(() => {
+        if (overlay) overlay.style.opacity = '0';
+      }, 300);
+    }, 200);
   }
 
   triggerThemeEffects() {
     // Text color wave effect
     this.animateTextColorWave();
-    
+
     // Card re-glow effect
     this.animateCardReGlow();
-    
+
     // Button re-light effect
     this.animateButtonReLight();
   }
@@ -133,7 +125,7 @@ class ThemeEngine {
     headings.forEach((heading, index) => {
       heading.style.transition = 'none';
       heading.style.opacity = '0.7';
-      
+
       setTimeout(() => {
         heading.style.transition = 'opacity 0.4s ease-out';
         heading.style.opacity = '1';
@@ -198,21 +190,21 @@ class ThemeEngine {
 
   initMagneticButtons() {
     const buttons = document.querySelectorAll('.btn-primary, .btn-secondary');
-    
+
     buttons.forEach(btn => {
       btn.classList.add('btn-magnetic');
-      
+
       btn.addEventListener('mousemove', (e) => {
         const rect = btn.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        
+
         const moveX = x * 0.15;
         const moveY = y * 0.15;
-        
+
         btn.style.transform = `translate(${moveX}px, ${moveY}px)`;
       }, { passive: true });
-      
+
       btn.addEventListener('mouseleave', () => {
         btn.style.transform = '';
       }, { passive: true });
@@ -224,7 +216,7 @@ class ThemeEngine {
 document.addEventListener('DOMContentLoaded', () => {
   const engine = new ThemeEngine();
   engine.loadTheme();
-  
+
   // Cursor glow (desktop only)
   if (window.matchMedia('(pointer: fine)').matches) {
     const glow = document.getElementById('cursorGlow');
@@ -239,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, { passive: true });
     }
   }
-  
+
   // Parallax (throttled)
   const orbs = document.querySelectorAll('.orb');
   if (orbs.length) {
@@ -257,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, { passive: true });
   }
-  
+
   // Scroll animations
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -267,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  
+
   document.querySelectorAll('.animate-on-scroll').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
