@@ -156,8 +156,17 @@ img {
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.8; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
 }
 
 /* ============ HERO ============ */
@@ -313,8 +322,17 @@ img {
 }
 
 @keyframes scrollDown {
-  0%, 100% { transform: translateY(0); opacity: 0; }
-  50% { transform: translateY(10px); opacity: 1; }
+
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
 }
 
 /* ============ ABOUT ============ */
@@ -568,25 +586,32 @@ img {
 /* ============ CERTIFICATIONS ============ */
 .certs-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
 .cert-logo {
-  width: 56px;
-  height: 56px;
+  min-width: 56px;
+  min-height: 56px;
+  width: fit-content;
+  height: auto;
+  padding: 10px 14px;
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.04);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 16px;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .cert-card h3 {
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 8px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .cert-issuer {
@@ -757,6 +782,69 @@ img {
   to {
     transform: scaleX(1);
   }
+}
+
+/* ============ SIGMA PHILOSOPHY ============ */
+.sigma-card {
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border-radius: 20px;
+  overflow: visible;
+}
+
+.sigma-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sigma-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.pillar {
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.pillar p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.pillar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-title--primary {
+  color: var(--accent-1);
+}
+
+.pillar-title--secondary {
+  color: var(--accent-2);
+}
+
+.sigma-conclusion {
+  font-style: italic;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ============ CONTACT ============ */

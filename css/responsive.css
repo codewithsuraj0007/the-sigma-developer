@@ -46,6 +46,14 @@
     margin: 0 auto;
   }
 
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sigma-pillars {
+    grid-template-columns: 1fr;
+  }
+
   .flagship-top-grid {
     grid-template-columns: 1fr;
   }
@@ -265,6 +273,19 @@
 
   .cert-category-title {
     font-size: 1rem;
+  }
+
+  .sigma-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .sigma-intro {
+    font-size: 1rem;
+  }
+
+  .sigma-pillars {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .footer-links {

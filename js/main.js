@@ -150,7 +150,7 @@
       demo: 'https://rana-computers.vercel.app/',
       linkedin: 'https://www.linkedin.com/posts/suraj-prajapati-0904b92b9_webdevelopment-reactjs-nextjs-activity-7391445851551723520-cNcq?utm_source=share&utm_medium=member_desktop&rcm=ACoAAExtOCwBfOY7fHbLSOOTCV0eBe3OCFsaLo8'
     }
-  }; 
+  };
 
   var projectModal = document.getElementById('projectModal');
   var modalTitle = document.getElementById('modalTitle');
@@ -233,13 +233,18 @@
   var certImage = document.getElementById('certImage');
 
   var certImages = {
-    'aws': 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/Screenshot-2026-02-05-230223-1770382967828.png?width=8000&height=8000&resize=contain',
-    'google': 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/Screenshot-2026-02-05-225646-1770382967233.png?width=8000&height=8000&resize=contain',
-    'deloitte': 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/Screenshot-2026-02-05-225847-1770382967489.png?width=8000&height=8000&resize=contain',
-    'tata': 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/Screenshot-2026-02-05-225739-1770382968055.png?width=8000&height=8000&resize=contain',
-    'jpmorgan': 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/Screenshot-2026-02-05-225847-1770382967489.png?width=8000&height=8000&resize=contain',
-    'hindtech': 'https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/Screenshot-2026-02-05-232207-1770382967316.png?width=8000&height=8000&resize=contain'
+    'aws': 'images/Screenshot 2026-02-05 230223.png',
+    'google': 'images/Screenshot 2026-02-05 225646.png',
+    'deloitte': 'images/Screenshot 2026-02-05 225847.png',
+    'tata': 'images/Screenshot 2026-02-05 225739.png',
+    'jpmorgan': 'images/Screenshot 2026-02-05 225527.png',
+    'hindtech': 'images/Screenshot 2026-02-05 232207.png',
+    'forage-career': 'images/Screenshot 2026-02-05 225613.png',
+    'digicoders': 'images/certificate degecoders.jpeg',
+    'bteup': 'images/Screenshot 2026-02-05 231810.png'
   };
+
+
 
   document.querySelectorAll('.cert-view-btn').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
@@ -327,7 +332,7 @@
       var y = e.clientY - rect.top - rect.height / 2;
       var distance = Math.sqrt(x * x + y * y);
       var maxDistance = 50;
-      
+
       if (distance < maxDistance) {
         var strength = (maxDistance - distance) / maxDistance;
         var moveX = x * strength * 0.3;
@@ -335,7 +340,7 @@
         btn.style.transform = 'translate(' + moveX + 'px, ' + moveY + 'px)';
       }
     });
-    
+
     btn.addEventListener('mouseleave', function () {
       btn.style.transform = '';
     });
