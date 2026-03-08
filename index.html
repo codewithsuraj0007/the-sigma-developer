@@ -10,7 +10,7 @@
   <meta name="keywords"
     content="Suraj Prajapati, The Sigma Developers, Full Stack Developer Lucknow, .NET Backend Developer India, Kafka Backend Engineer, SaaS Application Developer, MERN Stack Developer India, Portfolio of Full Stack Developer India, Hire .NET developer in India, Sigma developer India">
   <meta name="author" content="Suraj Prajapati">
-  <meta name="robots" content="index, follow"> 
+  <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="TZDhs95bKFaqKOyrIh6fJGxoF_J9TBFD6IkuPSHF_OU" />
   <link rel="canonical" href="https://thesigmadevelopers.web.app/">
 
@@ -49,6 +49,7 @@
   <link rel="stylesheet" href="css/responsive.css">
   <link rel="stylesheet" href="css/day-clay.css">
   <link rel="stylesheet" href="css/motion-layer.css">
+  <link rel="stylesheet" href="css/feedback.css">
 
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%CE%A3</text></svg>">
@@ -1541,6 +1542,70 @@
 
 
 
+
+    <!-- ========== MODULE: FEEDBACK - SHARE YOUR INSIGHT ========== -->
+    <section id="feedback" class="fdbk-section section" aria-label="Share your feedback">
+      <div class="fdbk-container">
+        <div class="fdbk-left fdbk-animate-left">
+          <h2 class="fdbk-title">Share Your <span class="gradient-text">Insight</span></h2>
+          <p class="fdbk-subtitle">Help shape the future of this platform.</p>
+          <p class="fdbk-description">
+            Your feedback drives innovation. Share your experience, suggest improvements, or tell me what features you'd
+            like to see next in the Sigma Developer ecosystem.
+          </p>
+          <div class="fdbk-visual">
+            <div class="fdbk-visual-orb"></div>
+            <div class="fdbk-visual-lines"></div>
+          </div>
+        </div>
+
+        <div class="fdbk-right fdbk-animate-right">
+          <div class="fdbk-card glass-card">
+            <form id="feedbackForm">
+              <div class="fdbk-form-group">
+                <label class="fdbk-label">How would you rate your experience?</label>
+                <div class="fdbk-stars" role="radiogroup" aria-label="Star Rating">
+                  <span class="fdbk-star" data-value="1" role="radio" aria-checked="false">&#9733;</span>
+                  <span class="fdbk-star" data-value="2" role="radio" aria-checked="false">&#9733;</span>
+                  <span class="fdbk-star" data-value="3" role="radio" aria-checked="false">&#9733;</span>
+                  <span class="fdbk-star" data-value="4" role="radio" aria-checked="false">&#9733;</span>
+                  <span class="fdbk-star" data-value="5" role="radio" aria-checked="false">&#9733;</span>
+                </div>
+                <input type="hidden" id="feedbackRating" name="rating" required>
+              </div>
+
+              <div class="fdbk-form-group">
+                <label for="feedbackName" class="fdbk-label">Your Name *</label>
+                <input type="text" id="feedbackName" class="fdbk-input" placeholder="Enter your name" required>
+              </div>
+
+              <div class="fdbk-form-group">
+                <label for="feedbackEmail" class="fdbk-label">Email (Optional)</label>
+                <input type="email" id="feedbackEmail" class="fdbk-input" placeholder="your@email.com">
+              </div>
+
+              <div class="fdbk-form-group">
+                <label for="feedbackText" class="fdbk-label">Your Feedback *</label>
+                <textarea id="feedbackText" class="fdbk-textarea" placeholder="What's on your mind?"
+                  required></textarea>
+              </div>
+
+              <button type="submit" id="feedbackSubmit" class="fdbk-submit">
+                <span class="fdbk-btn-text">Send Feedback</span>
+                <span class="fdbk-loader"></span>
+              </button>
+            </form>
+
+            <div id="feedbackSuccess" class="fdbk-success">
+              <div class="fdbk-success-icon">&#10003;</div>
+              <h3>Thank you for your feedback!</h3>
+              <p>Your insight is valuable and helps me improve.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ========== MODULE 7: CONTACT ========== -->
     <section id="contact" class="contact section" aria-label="Contact Suraj Prajapati">
       <div class="container">
@@ -1898,6 +1963,7 @@
   <script src="js/main.js"></script>
   <script src="js/signals.js"></script>
   <script src="js/ai-chat.js"></script>
+  <script src="js/feedback.js"></script>
 </body>
 
 </html>

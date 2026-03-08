@@ -4,10 +4,11 @@
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
+const nodemailer = require('nodemailer');
 
 const app = express();
 app.use(express.json());
-app.use(express.static(path.join(__dirname)));
+app.use(express.static(path.join(__dirname, '..')));
 
 // ==========================================
 // SURAJ'S SYSTEM PROMPT (kept server-side)
@@ -22,7 +23,7 @@ SURAJ'S PROFILE:
 - Brand: The Sigma Developers
 - Title: MERN Full Stack Developer & AI Integration Engineer
 - Location: Lucknow, UP, India
-- Education: Diploma in IT with AI/ML — Government Polytechnic, Lucknow
+- Education: Diploma in IT with AI — Government Polytechnic, Lucknow
 - Current Role: Web Developer at Seek Unique Productions (Sep 2025 – Present)
 
 TECH STACK:
@@ -59,6 +60,71 @@ RULES:
 - Share contact info only when asked directly or when hiring/collaboration intent is detected.
 - If someone asks a general tech question, give a brief helpful answer and relate it back to Suraj's experience when relevant.
 - If someone asks something completely off-topic, gently redirect to Suraj's portfolio.`;
+
+// ==========================================
+// FEEDBACK API ENDPOINT
+// ==========================================
+
+// Email Transporter (Gmail App Password required)
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_USER || 'sigmadeveloper.in@gmail.com',
+    pass: process.env.EMAIL_PASS // User must set this in .env
+  }
+});
+
+app.post('/api/send-feedback', async (req, res) => {
+  try {
+    const { name, email, rating, message, timestamp } = req.body;
+
+    console.log(`\n📬 Processing Feedback from ${name}...`);
+
+    const starRating = '⭐'.repeat(Math.min(Math.max(rating, 1), 5));
+
+    const mailOptions = {
+      from: `"Sigma Portfolio" <${process.env.EMAIL_USER || 'sigmadeveloper.in@gmail.com'}>`,
+      to: 'sigmadeveloper.in@gmail.com',
+      subject: `New Portfolio Feedback ${starRating}`,
+      html: `
+        <div style="font-family: sans-serif; padding: 20px; border: 1px solid #eee; border-radius: 10px; max-width: 600px;">
+          <h2 style="color: #a855f7;">New Feedback Received</h2>
+          <hr>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Rating:</strong> ${starRating} (${rating}/5)</p>
+          <p><strong>Message:</strong></p>
+          <div style="background: #fdf2f8; padding: 15px; border-radius: 5px; border-left: 4px solid #ec4899;">
+            ${message.replace(/\n/g, '<br>')}
+          </div>
+          <p style="font-size: 0.8rem; color: #999; margin-top: 20px;">
+            Submitted on: ${timestamp || new Date().toLocaleString()}
+          </p>
+        </div>
+      `
+    };
+
+    // Only send if password is set
+    if (process.env.EMAIL_PASS) {
+      await transporter.sendMail(mailOptions);
+      console.log('✅ Email sent successfully!');
+      res.json({ success: true, message: 'Feedback sent to your email' });
+    } else {
+      console.warn('⚠️ EMAIL_PASS missing in .env. Logging to console instead:');
+      console.log(`- Rating: ${rating}/5\n- Message: ${message}`);
+      // Return success: true but with a warning field so JS can alert the user
+      res.json({
+        success: true,
+        warning: 'EMAIL_PASS_MISSING',
+        message: 'Feedback logged locally, but setup EMAIL_PASS in .env to receive emails.'
+      });
+    }
+
+  } catch (err) {
+    console.error('❌ Feedback API error:', err.message);
+    res.status(500).json({ error: 'Email service error' });
+  }
+});
 
 // ==========================================
 // OPENROUTER CHAT PROXY
@@ -131,7 +197,7 @@ app.post('/api/chat', async (req, res) => {
 
 // Serve index.html for all non-file routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile(path.join(__dirname, '..', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
