@@ -1,11 +1,10 @@
 {
     "hosting": {
-        "public": ".",
+        "public": "frontend",
         "ignore": [
             "firebase.json",
             "**/.*",
-            "**/node_modules/**",
-            "functions/**"
+            "**/node_modules/**"
         ],
         "rewrites": [
             {
@@ -19,7 +18,7 @@
         ]
     },
     "functions": {
-        "source": "functions",
+        "source": "backend/functions",
         "runtime": "nodejs18"
     }
 }
