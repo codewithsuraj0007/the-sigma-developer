@@ -1,0 +1,12 @@
+{
+  "name": "sigma-portfolio-deployment-proxy",
+  "version": "1.0.0",
+  "description": "Root configuration to tell Railway & Render how to build and start the backend server since it was moved to a subfolder.",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "cd backend/sigma-portfolio-backend && npm install",
+    "start": "cd backend/sigma-portfolio-backend && npm start"
+  }
+}
