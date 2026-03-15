@@ -1,0 +1,1 @@
+Broken link found: data:image/svg+xml,<svg xmlns= (resolved path: C:\Users\kings\OneDrive\Desktop\portfolio\the-sigma-developer\frontend\data:image\svg+xml,<svg xmlns=)
