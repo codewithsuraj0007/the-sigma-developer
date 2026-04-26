@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer');
 
 const app = express();
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../../frontend')));
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // ==========================================
 // SURAJ'S SYSTEM PROMPT (kept server-side)
@@ -197,7 +197,7 @@ app.post('/api/chat', async (req, res) => {
 
 // Serve index.html for all non-file routes
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../frontend', 'index.html'));
+  res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;

@@ -6,7 +6,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "cd backend/sigma-portfolio-backend && npm install",
-    "start": "cd backend/sigma-portfolio-backend && npm start"
+    "build": "cd sigma-portfolio-backend && npm install",
+    "start": "cd sigma-portfolio-backend && npm start"
   }
 }
