@@ -1,12 +1,15 @@
 {
   "name": "sigma-portfolio-deployment-proxy",
   "version": "1.0.0",
-  "description": "Root configuration to tell Railway & Render how to build and start the backend server since it was moved to a subfolder.",
+  "description": "Root configuration for Sigma Developer Portfolio deployment on Netlify and Vercel.",
   "engines": {
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "cd sigma-portfolio-backend && npm install",
+    "build": "echo 'Static frontend deployment - no build step required'",
     "start": "cd sigma-portfolio-backend && npm start"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.7"
   }
 }

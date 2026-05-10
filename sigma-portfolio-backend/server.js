@@ -3,12 +3,19 @@
 
 require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const nodemailer = require('nodemailer');
 
 const app = express();
+app.use(cors()); // Enable CORS for ALL origins
 app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend')));
+
+// Health Check Endpoint
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK', timestamp: new Date().toISOString() });
+});
 
 // ==========================================
 // SURAJ'S SYSTEM PROMPT (kept server-side)
@@ -52,7 +59,7 @@ CONTACT (share when asked or when hiring/collaboration intent detected):
 - WhatsApp (fastest): https://wa.me/916387441629
 - Email: kingsuraj6387@gmail.com
 - LinkedIn: https://www.linkedin.com/in/suraj-prajapati-0904b92b9
-- Portfolio: https://thesigmadevelopers.web.app/
+- Portfolio: https://thesigmadevelopers.netlify.app/
 
 RULES:
 - Keep answers short and punchy (2-3 sentences).
@@ -162,7 +169,7 @@ app.post('/api/chat', async (req, res) => {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': 'https://thesigmadevelopers.web.app/',
+        'HTTP-Referer': 'https://thesigmadevelopers.netlify.app/',
         'X-Title': 'Sigma Portfolio AI Assistant'
       },
       body: JSON.stringify(openRouterBody),

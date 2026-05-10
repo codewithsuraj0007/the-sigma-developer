@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnText.style.display = 'none';
 
             try {
-                const response = await fetch('/api/send-feedback', {
+                const response = await fetch(`${CONFIG.API_URL}/api/send-feedback`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

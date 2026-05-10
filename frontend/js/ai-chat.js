@@ -1,4 +1,4 @@
-﻿// ai-chat.js - Sigma AI Assistant v4.0
+// ai-chat.js - Sigma AI Assistant v4.0
 // Dynamic: OpenRouter LLM via server proxy + Smart fallback engine
 
 (function () {
@@ -270,7 +270,7 @@
     const timeoutId = setTimeout(function () { controller.abort(); }, 20000);
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch(`${CONFIG.API_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: chatHistory }),
