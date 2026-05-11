@@ -1,11 +1,26 @@
 // server.js - Sigma Portfolio Server with AI Chat Proxy
 // Keeps API key secure on the server side.
 
-require('dotenv').config();
+const fs = require('fs');
+const path = require('path');
+const dotenv = require('dotenv');
 const express = require('express');
 const cors = require('cors');
-const path = require('path');
 const nodemailer = require('nodemailer');
+
+// Load .env from the nearest expected location so local dev works
+// whether the server is started from the repo root or this subfolder.
+const envCandidates = [
+  path.resolve(__dirname, '../.env'),
+  path.resolve(__dirname, '../../.env')
+];
+
+const envPath = envCandidates.find((candidate) => fs.existsSync(candidate));
+if (envPath) {
+  dotenv.config({ path: envPath });
+} else {
+  dotenv.config();
+}
 
 const app = express();
 app.use(cors()); // Enable CORS for ALL origins
