@@ -1,0 +1,9 @@
+{
+  "name": "Suraj Prajapati | The Sigma Developers",
+  "short_name": "Sigma Dev",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0f",
+  "theme_color": "#0a0a0f",
+  "description": "Portfolio of Suraj Prajapati, full-stack and AI integration engineer."
+}
