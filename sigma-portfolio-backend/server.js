@@ -59,7 +59,7 @@ CONTACT (share when asked or when hiring/collaboration intent detected):
 - WhatsApp (fastest): https://wa.me/916387441629
 - Email: kingsuraj6387@gmail.com
 - LinkedIn: https://www.linkedin.com/in/suraj-prajapati-0904b92b9
-- Portfolio: https://thesigmadevelopers.netlify.app/
+- Portfolio: https://sigma-developers.in/
 
 RULES:
 - Keep answers short and punchy (2-3 sentences).
@@ -169,7 +169,7 @@ app.post('/api/chat', async (req, res) => {
       headers: {
         'Authorization': `Bearer ${apiKey}`,
         'Content-Type': 'application/json',
-        'HTTP-Referer': 'https://thesigmadevelopers.netlify.app/',
+        'HTTP-Referer': 'https://sigma-developers.in/',
         'X-Title': 'Sigma Portfolio AI Assistant'
       },
       body: JSON.stringify(openRouterBody),
@@ -209,6 +209,6 @@ app.get('*', (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`\n⚡ Sigma Portfolio running on http://localhost:${PORT}`);
+  console.log(`\n⚡ Sigma Portfolio running on http://127.0.0.1:${PORT}`);
   console.log(`🤖 AI Chat proxy active at /api/chat\n`);
 });
